@@ -54,3 +54,5 @@ gem 'jquery-rails'
 gem 'devise'
 
 gem 'simple_form'
+
+gem 'fullcalendar-rails'

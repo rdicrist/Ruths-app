@@ -5,8 +5,10 @@
   <%= link_to (image_tag post.i.url(:medium)), image_path(post) %>
   <p></p>
   <%= post.caption %>
+  
   <% if user_signed_in? and current_user.admin%>
-    
+    <p>Delete Will Go Here</p>   
+  <%end %>
   
  </center>
 <% end %>

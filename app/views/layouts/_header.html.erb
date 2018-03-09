@@ -5,7 +5,7 @@
     <a <strong><%= link_to 'About Me', "/pages/about" %></strong></a>
     <a <strong><%= link_to 'Photos', "/images#index" %></strong></a>
     <a <strong><%= link_to 'Contact Me', "#" %></strong></a>
-    <a <strong><%= link_to 'Calendar', "#" %></strong></a>
+    <a <strong><%= link_to 'Calendar', "/events" %></strong></a>
     
     
     <% if user_signed_in? and current_user.admin%>
@@ -15,7 +15,7 @@
           <a <strong><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></strong></a>
         <!-- The block ends here -->
     <% end %>
-    <% if user_signed_in? and !current_user.admin %>
+    <% else if user_signed_in? and !current_user.admin %>
           <a <strong><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></strong></a>
     <% else %>
           <a <strong><%= link_to 'Sign Up', new_user_registration_path %></strong></a>
