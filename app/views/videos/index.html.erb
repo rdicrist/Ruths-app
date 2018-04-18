@@ -1,0 +1,11 @@
+<% if @videos.any? %>
+<div class="center">
+<h1>Latest videos</h1>
+</div>
+  <% @videos.each do |video| %>
+    <center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.uid %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </center>
+  <% end %>
+<% end %>
+

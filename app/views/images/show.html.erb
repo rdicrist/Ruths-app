@@ -1,0 +1,18 @@
+
+<div class="center">
+<div class="posts-wrapper row">
+  <div class="post">
+    <div class="post-head">
+    </div>
+    <div class="image center-block">
+      <%= image_tag @image.i.url(:medium) %>
+    </div>
+    <p class="caption">
+      <%= @image.caption %>
+    </p>
+    <div class="text-center">
+      <%= link_to "Back", images_path %>
+    </div>
+  </div>
+</div>
+</div>

@@ -3,9 +3,11 @@ class Image < ActiveRecord::Base
 
     
     has_attached_file :i, styles: {:medium => "640x" }
-    validates_attachment_content_type :i, :content_type => /\Aimage\/.*\Z/
+    validates_attachment_content_type :i, 
+        :content_type => [/\Aimage\/.*\Z/, 'video/mp4']
     
     belongs_to :user
+    
     
     
 end

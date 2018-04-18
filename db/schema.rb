@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309142844) do
+ActiveRecord::Schema.define(version: 20180410214659) do
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "images", force: :cascade do |t|
     t.string   "caption"
@@ -25,6 +34,14 @@ ActiveRecord::Schema.define(version: 20180309142844) do
   end
 
   add_index "images", ["user_id"], name: "index_images_on_user_id"
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -44,5 +61,18 @@ ActiveRecord::Schema.define(version: 20180309142844) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "videos", force: :cascade do |t|
+    t.string   "link"
+    t.string   "title"
+    t.datetime "published_at"
+    t.integer  "likes"
+    t.integer  "dislikes"
+    t.string   "uid"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "videos", ["uid"], name: "index_videos_on_uid"
 
 end

@@ -1,29 +1,34 @@
 <header role="banner" class="app-header">
     <center>
-  <div class="headerMenu"> 
+  <div class="headerMenu">
     <a <strong><%= link_to 'Home', "/" %></strong></a>
     <a <strong><%= link_to 'About Me', "/pages/about" %></strong></a>
     <a <strong><%= link_to 'Photos', "/images#index" %></strong></a>
+    <a <strong><%= link_to 'Videos', "/videos#index" %></strong></a>
     <a <strong><%= link_to 'Contact Me', "#" %></strong></a>
     <a <strong><%= link_to 'Calendar', "/events" %></strong></a>
     
     
     <% if user_signed_in? and current_user.admin%>
         <!--This block is only visible to signed in admins -->
-        
           <a <strong><%= link_to 'New Photos', new_image_path %></strong></a>
+          <a <strong><%= link_to 'New Videos', new_video_path %></strong></a>
           <a <strong><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></strong></a>
         <!-- The block ends here -->
-    <% end %>
+        
     <% else if user_signed_in? and !current_user.admin %>
+        <!--This block is only visible to signed in users -->
           <a <strong><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></strong></a>
-    <% else %>
+    
+    <% else%>
           <a <strong><%= link_to 'Sign Up', new_user_registration_path %></strong></a>
           <a <strong><%= link_to 'Login', new_user_session_path %></strong></a>
+    <% end %>
     <% end %>
     
   </div>
   </center>
+  
 </header>
 
 
