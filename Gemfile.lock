@@ -224,7 +224,7 @@ DEPENDENCIES
   mailgun-ruby (~> 1.1.6)
   momentjs-rails
   paperclip (~> 4.2)
-  pg (~> 0.18)
+  pg (~> 0.20)
   rails (= 4.2.5)
   rails-observers
   sass-rails (~> 5.0)

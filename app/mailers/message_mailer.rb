@@ -1,15 +1,15 @@
 class MessageMailer < ActionMailer::Base
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.message.contact_me.subject
-  #
+require "mailgun-ruby"
   layout "mailer"
   
   def contact_me(message)
     @body = message.body
+    mg_client = Mailgun::Client.new ENV['mailgun_secret_api_key']
+    message_params = {:from => message.email,
+                      :to => ENV['email'],
+                      :subject => 'Contact Form',
+                      :text => message.body}
+    mg_client.send_message ENV['mailgun_domain'], message_params
 
-    mail to: "edicristoforo@gmail.com", from: message.email
   end
 end

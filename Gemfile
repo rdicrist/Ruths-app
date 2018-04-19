@@ -10,7 +10,7 @@ gem 'rails', '4.2.5'
 # group :production do
 #   gem 'pg'
 # end
-gem 'pg', '~> 0.18', group: :production
+gem 'pg', '~> 0.20', group: :production
 gem 'sqlite3', group: [:development, :test]
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
