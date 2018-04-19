@@ -22,6 +22,6 @@
 en:
   hello: "Hello world"
   
-  message:
+  message_mailer:
     contact_me:
         subject: "Message from TylerFay.com"
