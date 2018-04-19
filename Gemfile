@@ -56,8 +56,6 @@ gem 'paperclip', '~> 4.2'
 
 gem 'bootstrap-sass', '~> 3.3.5'
 
-gem 'jquery-rails'
-
 gem 'devise'
 
 gem 'simple_form'
@@ -71,3 +69,7 @@ gem 'yt', '~> 0.13.7'
 gem 'autoprefixer-rails'
 
 gem 'rails-observers'
+
+gem 'mailgun-ruby', '~>1.1.6'
+
+gem "figaro"
