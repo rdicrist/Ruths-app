@@ -69,7 +69,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :mailgun
     config.action_mailer.mailgun_settings = {
       api_key: 'ENV["mailgun_secret_api_key"]',
-      domain: 'https://murmuring-cliffs-53538.herokuapp.com',
+      domain: 'sandbox2776990ee7cf4f318c59acea4ae1af3c.mailgun.org',
     }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

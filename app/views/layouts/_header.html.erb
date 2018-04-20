@@ -2,30 +2,29 @@
   <div id="main">
     <center>
   <div id="mySidenav" class="headerMenu">
-    <a <strong><%= link_to 'Home', "/" %></strong></a>
-    <a <strong><%= link_to 'About Me', "/pages/about" %></strong></a>
-    <a <strong><%= link_to 'Photos', "/images#index" %></strong></a>
-    <a <strong><%= link_to 'Videos', "/videos#index" %></strong></a>
-    <a <strong><%= link_to 'Contact Me', "/messages/new" %></strong></a>
-    <a <strong><%= link_to 'Calendar', "/events" %></strong></a>
-    <a <strong><%= link_to 'News', "/posts#index" %></strong></a>
+    <%= link_to 'Home', "/" %>
+    <%= link_to 'Photos', "/images#index" %>
+    <%= link_to 'Videos', "/videos#index" %>
+    <%= link_to 'Contact Me', "/messages/new" %>
+    <%= link_to 'Calendar', "/events" %>
+    <%= link_to 'News', "/posts#index" %>
     
     
     <% if user_signed_in? and current_user.admin%>
         <!--This block is only visible to signed in admins -->
-          <a <strong><%= link_to 'New Photos', new_image_path %></strong></a>
-          <a <strong><%= link_to 'New Videos', new_video_path %></strong></a>
-          <a <strong><%= link_to 'New Post', new_post_path %></strong></a>
-          <a <strong><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></strong></a>
+          <%= link_to 'New Photos', new_image_path %>
+          <%= link_to 'New Videos', new_video_path %>
+          <%= link_to 'New Post', new_post_path %>
+          <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
         <!-- The block ends here -->
         
     <% else if user_signed_in? and !current_user.admin %>
         <!--This block is only visible to signed in users -->
-          <a <strong><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></strong></a>
+          <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
     
     <% else%>
-          <a <strong><%= link_to 'Sign Up', new_user_registration_path %></strong></a>
-          <a <strong><%= link_to 'Login', new_user_session_path %></strong></a>
+          <%= link_to 'Sign Up', new_user_registration_path %>
+          <%= link_to 'Login', new_user_session_path %>
     <% end %>
     <% end %>
     
@@ -34,5 +33,3 @@
   </center>
   </div>
 </header>
-
-

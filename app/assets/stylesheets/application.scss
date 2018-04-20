@@ -46,18 +46,18 @@ html *
 .headerMenu
 {
     height: 100%; /* 100% Full-height */
-    width: 175px; /* 0 width - change this with JavaScript */
+    width: 170px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     background-color: #D9DFC8; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
+    padding-top: 20px; /* Place content 60px from the top */
 }
 
 .headerMenu a {
-    padding: 8px 8px 8px 32px;
+    padding: 14px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
@@ -77,6 +77,9 @@ html *
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    .column {
+        width: 100%;
+    }
 }
 
 
@@ -86,3 +89,29 @@ input, textarea { display: block; margin: auto;}
 .static-info{
     padding: 10px;
 }
+
+.caption {
+    padding: 10px;
+    font-size: 150%;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+}
+
+.left {
+  width: 75%;
+}
+
+.right {
+  width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+

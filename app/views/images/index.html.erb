@@ -6,9 +6,10 @@
 <% @images.each do |post| %>
 <center>
   <%= link_to (image_tag post.i.url(:medium)), image_path(post) %>
-  <p></p>
-  <%= post.caption %>
   
+  <div class="caption">
+  <%= post.caption %>
+  </div>
   
   
   <% if user_signed_in? and current_user.admin%>
