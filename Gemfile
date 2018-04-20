@@ -73,3 +73,9 @@ gem 'rails-observers'
 gem 'mailgun-ruby', '~>1.1.6'
 
 gem "figaro"
+
+gem 'ckeditor', '~> 4.1'
+
+gem 'carrierwave'
+
+gem 'mini_magick'

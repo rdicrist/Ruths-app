@@ -1,18 +1,21 @@
 <header role="banner" class="app-header">
+  <div id="main">
     <center>
-  <div class="headerMenu">
+  <div id="mySidenav" class="headerMenu">
     <a <strong><%= link_to 'Home', "/" %></strong></a>
     <a <strong><%= link_to 'About Me', "/pages/about" %></strong></a>
     <a <strong><%= link_to 'Photos', "/images#index" %></strong></a>
     <a <strong><%= link_to 'Videos', "/videos#index" %></strong></a>
     <a <strong><%= link_to 'Contact Me', "/messages/new" %></strong></a>
     <a <strong><%= link_to 'Calendar', "/events" %></strong></a>
+    <a <strong><%= link_to 'News', "/posts#index" %></strong></a>
     
     
     <% if user_signed_in? and current_user.admin%>
         <!--This block is only visible to signed in admins -->
           <a <strong><%= link_to 'New Photos', new_image_path %></strong></a>
           <a <strong><%= link_to 'New Videos', new_video_path %></strong></a>
+          <a <strong><%= link_to 'New Post', new_post_path %></strong></a>
           <a <strong><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></strong></a>
         <!-- The block ends here -->
         
@@ -27,8 +30,9 @@
     <% end %>
     
   </div>
-  </center>
   
+  </center>
+  </div>
 </header>
 
 

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+  
   resources :events do
     get :get_events, on: :collection
   end
@@ -67,7 +69,7 @@ Rails.application.routes.draw do
   resources :videos, only: [:index, :new, :create, :destroy]
   
   resources :messages
-  # get '/contact-me', to: 'messages#new', as: 'new_message'
-  # post '/contact-me', to: 'messages#create'
+
+  resources :posts
   
 end
