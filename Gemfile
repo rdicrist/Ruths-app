@@ -79,3 +79,9 @@ gem 'ckeditor', '~> 4.1'
 gem 'carrierwave'
 
 gem 'mini_magick'
+
+gem 'mail_form'
+
+group :development do
+  gem 'letter_opener_web'
+end

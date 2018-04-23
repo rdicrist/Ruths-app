@@ -65,12 +65,8 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-
-  config.action_mailer.delivery_method = :mailgun
-    config.action_mailer.mailgun_settings = {
-      api_key: 'ENV["mailgun_secret_api_key"]',
-      domain: 'sandbox2776990ee7cf4f318c59acea4ae1af3c.mailgun.org',
-    }
+  
+  config.action_mailer.delivery_method = :letter_opener_web
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
