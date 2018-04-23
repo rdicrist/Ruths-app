@@ -42,6 +42,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1.json
   def update
     respond_to do |format|
+      @event = Event.find params[:id]
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
