@@ -12,5 +12,5 @@ $(document).on 'ready page:load', ->
       events: '/events.json',
       
       timeFormat: 'hh:mm a'
-      eventColor: '#F6F8EC'
+      eventColor: '#00ff00'
     });
