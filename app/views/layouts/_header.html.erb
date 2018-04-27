@@ -1,34 +1,22 @@
 <header role="banner" class="app-header">
   <div id="main">
     <center>
-  <div id="mySidenav" class="headerMenu">
-    <a href="/">
-      <%= image_tag("grey-guitar.png", :alt => "rss feed") %>
-    </a>
-    <%= link_to 'Photos', "/images#index" %>
-    <%= link_to 'Videos', "/videos#index" %>
+  <div class="navbar">
+    <%= link_to 'Home', "/" %>
+    <%= link_to 'Gallery', "/images#index" %>
+    <%= link_to 'Services', "/services" %>
+    <%= link_to 'Place an Order', "" %>
     <%= link_to 'Contact Me', "/contacts" %>
-    <%= link_to 'Calendar', "/events" %>
-    <%= link_to 'News', "/posts#index" %>
+    <%= link_to 'Blog', "/posts#index" %>
     
     
     <% if user_signed_in? and current_user.admin%>
         <!--This block is only visible to signed in admins -->
           <%= link_to 'New Photos', new_image_path %>
-          <%= link_to 'New Videos', new_video_path %>
           <%= link_to 'New Post', new_post_path %>
           <%= link_to 'Check Mail', "/letter_opener" %>
           <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
         <!-- The block ends here -->
-        
-    <% else if user_signed_in? and !current_user.admin %>
-        <!--This block is only visible to signed in users -->
-          <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-    
-    <% else%>
-          <%= link_to 'Sign Up', new_user_registration_path %>
-          <%= link_to 'Login', new_user_session_path %>
-    <% end %>
     <% end %>
     
   </div>

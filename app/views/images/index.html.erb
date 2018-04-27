@@ -1,21 +1,37 @@
 <div class="margin">
 <div class="center">
-<h1>Photos</h1>
+<div class="gal">
+<h1>Gallery</h1>
+
+
+<div class="imgLabels">
+  <%= link_to 'Animals', "/animal" %>
+  <%= link_to 'Flowers', "/flower" %>
+  <%= link_to 'Sunrises and Sunsets', "/sun" %>
+  <%= link_to 'Coastal Areas', "/coast" %>
+  <%= link_to 'Lakes and Rivers', "/water" %>
+  <%= link_to 'Clouds', "/cloud" %>
+  <%= link_to 'Portfolios', "/portfolio" %>
+</div>  
 </div>
 
-<% @images.each do |post| %>
+  <h1>All Photos</h1>
+  <% @images.each do |post| %>
 <center>
-  <%= link_to (image_tag post.i.url(:medium)), image_path(post) %>
+    <%= link_to (image_tag post.i.url(:medium)), image_path(post) %>
   
-  <div class="caption">
-  <%= post.caption %>
-  </div>
+    <div class="caption">
+    <%= post.caption %>
+    </div>
   
   
-  <% if user_signed_in? and current_user.admin%>
-    <%= link_to "Delete", image_path(post), class: "btn btn-danger", data: {:confirm => "Are you sure?"}, method: :delete %>
-  <%end %>
+    <% if user_signed_in? and current_user.admin%>
+      <%= link_to "Delete", image_path(post), class: "btn btn-danger", data: {:confirm => "Are you sure?"}, method: :delete %>
+      <%= link_to "Edit Post", edit_image_path(post) %>
+    <%end %>
   
  </center>
 <% end %>
+
+</div>
 </div>

@@ -4,6 +4,7 @@
 <%= simple_form_for @image do |f| %>
   <%= f.input :i %>
   <%= f.input :caption %>
+  <%= f.input :category, collection: ["Animals", "Flowers", "Sunrises/Sunsets", "Coastal Areas", "Lakes and Rivers", "Clouds", "Portfolios"] %>
   <%= f.button :submit %>
 <% end %>
 </div>

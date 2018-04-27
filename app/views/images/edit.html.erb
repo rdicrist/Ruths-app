@@ -1,0 +1,14 @@
+<div class="margin">
+<h1>Edit a Photo!</h1>
+
+<div class="text-center">
+  <%= image_tag @image.i.url(:medium) %>
+</div>
+
+<%= simple_form_for @image do |f| %>
+  <%= f.input :i %>
+  <%= f.input :caption %>
+    <%= f.input :category, collection: ["Animals", "Flowers", "Sunrises/Sunsets", "Coastal Areas", "Lakes and Rivers", "Clouds", "Countryside", "Places", "Nature", "Portfolios"] %>
+  <%= f.button :submit %>
+<% end %>
+</div>

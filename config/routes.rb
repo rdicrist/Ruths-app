@@ -13,9 +13,20 @@ Rails.application.routes.draw do
   
   get "/pages/:page" => "pages#show"
   
+  get "/services" => "pages#services"
+  
   root "pages#show", page: "home"
   
   resources :images
+  
+  get "/animal" => "images#animal"
+  get "/flower" => "images#flower"
+  get "/sun" => "images#sun"
+  get "/coast" => "images#coast"
+  get "/water" => "images#water"
+  get "/cloud" => "images#cloud"
+  get "/portfolio" => "images#portfolio"
+  
   
   resources :videos, only: [:index, :new, :create, :destroy]
   
